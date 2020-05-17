@@ -13,7 +13,7 @@
 
 
 
-var canvas = document.getElementById("canvas1"),
+var canvas = document.getElementById("canvas"),
     ctx1 = canvas.getContext("2d"),
     keyword1 = "HAPPY BIRTHDAY",
     keyword2 = "APARNA",
@@ -63,14 +63,14 @@ document.addEventListener("touchstart", function(e) {
 
 // Particle Object
 var Particle = function() {
-  this.w = Math.random() * 10.5;
-  this.h = Math.random() * 10.5;
+  this.w = Math.random() * 7.5;
+  this.h = Math.random() * 7.5;
   this.x = -W;
   this.y = -H;
   this.free = false;
   
-  this.vy = (-5 + parseInt(Math.random() * 10) / 2)/1.2;
-  this.vx = (-4 + parseInt(Math.random() * 8))/1.5;
+  this.vy = (-5 + parseInt(Math.random() * 10) / 2)/1.5;
+  this.vx = (-4 + parseInt(Math.random() * 8))/2;
   
   // Color
   this.a = Math.random();
@@ -93,7 +93,7 @@ var particles = [];
 function drawText() {
   ctx1.clearRect(0, 0, W, H);
   ctx1.fillStyle = "#8800ff";
-  ctx1.font = "30px 'Arial', sans-serif";
+  ctx1.font = "45px 'Arial', sans-serif";
   ctx1.textAlign = "center";
   ctx1.fillText(keyword1, W/2, H/2 - 20);
   ctx1.fillText(keyword2, W/2, H/2 + 25);
@@ -267,7 +267,7 @@ function checkParticle(){
 
 (function animloop(){
 	requestAnimFrame(animloop);
-	if (count123 > 100000) {
+	if (count123 > 10000000) {
 		return 0;
 	}
 	update();
