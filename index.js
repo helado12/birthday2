@@ -22,7 +22,7 @@ var canvas = document.getElementById("canvas"),
     mouse = {},
     hovered = false,
     colors = ["236, 252, 17", "15, 245, 46", "15, 237,  245", "245, 15, 15", "245, 15, 214"],
-    minDist = 30,
+    minDist = 20,
     bounceFactor = 5,
     count123=0;
 
@@ -111,8 +111,8 @@ function positionParticles() {
   data = imageData.data;
   
   // Iterate each row and column
-  for (var i = 0; i < imageData.height; i += density) {
-    for (var j = 0; j < imageData.width; j += density) {
+  for (var i = 0; i < imageData.height*5; i += density) {
+    for (var j = 0; j < imageData.width*5; j += density) {
       
       // Get the color of the pixel
       var color = data[((j * ( imageData.width * 4)) + (i * 4)) - 1];
