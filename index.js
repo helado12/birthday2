@@ -23,7 +23,7 @@ var canvas = document.getElementById("canvas"),
     hovered = false,
     colors = ["236, 252, 17", "15, 245, 46", "15, 237,  245", "245, 15, 15", "245, 15, 214"],
     minDist = 20,
-    bounceFactor = 5,
+    bounceFactor = 4,
     count123=0;
 
 var W = window.innerWidth,
@@ -63,8 +63,8 @@ document.addEventListener("touchstart", function(e) {
 
 // Particle Object
 var Particle = function() {
-  this.w = Math.random() * 6;
-  this.h = Math.random() * 6;
+  this.w = Math.random() * 7;
+  this.h = Math.random() * 7;
   this.x = -W;
   this.y = -H;
   this.free = false;
@@ -111,8 +111,8 @@ function positionParticles() {
   data = imageData.data;
   
   // Iterate each row and column
-  for (var i = 0; i < imageData.height*3; i += density) {
-    for (var j = 0; j < imageData.width*3; j += density) {
+  for (var i = 0; i < imageData.height*2; i += density) {
+    for (var j = 0; j < imageData.width*2; j += density) {
       
       // Get the color of the pixel
       var color = data[((j * ( imageData.width * 4)) + (i * 4)) - 1];
