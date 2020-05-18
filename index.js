@@ -63,14 +63,14 @@ document.addEventListener("touchstart", function(e) {
 
 // Particle Object
 var Particle = function() {
-  this.w = Math.random() * 7;
-  this.h = Math.random() * 7;
+  this.w = Math.random() * 7.2;
+  this.h = Math.random() * 7.2;
   this.x = -W;
   this.y = -H;
   this.free = false;
   
-  this.vy = (-5 + parseInt(Math.random() * 10) / 2)/1.5;
-  this.vx = (-4 + parseInt(Math.random() * 8))/2;
+  this.vy = (-5 + parseInt(Math.random() * 10) / 2)/2;
+  this.vx = (-4 + parseInt(Math.random() * 8))/2.3;
   
   // Color
   this.a = Math.random();
@@ -95,8 +95,8 @@ function drawText() {
   ctx1.fillStyle = "#8800ff";
   ctx1.font = "45px 'Arial', sans-serif";
   ctx1.textAlign = "center";
-  ctx1.fillText(keyword1, W/2, H/2 - 20);
-  ctx1.fillText(keyword2, W/2, H/2 + 25);
+  ctx1.fillText(keyword1, W/2, H/2 - 30);
+  ctx1.fillText(keyword2, W/2, H/2 + 15);
 }
 
 // Clear the canvas
@@ -150,7 +150,7 @@ function update() {
       if(p.free == true) {
         ++count123;
         p.y += p.vy;
-        p.vy += 0.08;
+        p.vy += 0.06;
         p.x += p.vx;
         
         // Collision Detection
